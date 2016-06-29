@@ -9,8 +9,9 @@ from Planet import *
 
 def main():
 
-	jupiter = Planet("Jupiter", 10)
-	jupiter.printPlanetInfo()
+	sun = Planet("Sun", 100, 0, 0)
+	moon = Planet("Moon", 10, 0, 10)
+	sun.printPlanetInfo()
 
 # ------------------------------------------------------------------------------
 
