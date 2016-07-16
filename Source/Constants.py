@@ -1,3 +1,12 @@
+# ------------------------------------------------------------------------------
+
+# Constants Class.
+
+# This holds all of the constants for the program and makes them accessible
+# using CONST.CONSTANT NAME.
+
+# ------------------------------------------------------------------------------
+
 def constant(f):
 
     def fset(self, value):
