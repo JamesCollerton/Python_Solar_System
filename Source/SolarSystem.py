@@ -25,7 +25,7 @@ class SolarSystem:
 		saturn = Planet("Saturn", 95.2, 9.582, 0, 5, "khaki2")
 		uranus = Planet("Uranus", 14.6, 19.201, 0, 5, "skyblue")
 		neptune = Planet("Neptune", 17.2, 30.047, 0, 5, "royalblue3")
-		# pluto = Planet("Pluto", 90, 90, 0, 10, "snow4")
+		# pluto = Planet("Pluto", 90, 90, 0, 10, "snow 4")
 
 		planets = []
 		planets.append(sun)
