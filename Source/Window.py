@@ -15,18 +15,31 @@ class Window:
 
 		master = Tk()
 
+		self.createCanvas(master)
+		self.createCentre()
+
+	def createCanvas(self, master):
+
 		self.__canvas = Canvas(master, width = CONST.CANVAS_WIDTH, height = CONST.CANVAS_HEIGHT)
-		self.__canvas.configure(background='black')
+		self.__canvas.configure(background = 'black')
 		self.__canvas.pack()
 
-		# w.create_line(0, 0, 200, 100)
-		# w.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
+	def createCentre(self):
 
-		# w.create_rectangle(50, 25, 150, 75, fill="blue")
+		self.__xCentre = CONST.CANVAS_WIDTH / 2
+		self.__yCentre = CONST.CANVAS_HEIGHT / 2
 
-		# mainloop()
-
-	def drawCircle(self, size, xCoord, yCoord):
+	def drawCircle(self, size, xCoord, yCoord, color):
 		
-		self.__canvas.create_oval(0, 0, 100, 100, fill = "blue")
-		mainloop()
+		canvasXCoord = self.__xCentre + xCoord
+		canvasYCoord = self.__yCentre + yCoord
+
+		self.__canvas.create_oval(canvasXCoord - size / 2, 
+								  canvasYCoord - size / 2, 
+								  canvasXCoord + size / 2, 
+								  canvasYCoord + size / 2, 
+								  fill = color)
+
+	def mainLoop(self):
+
+		mainloop();

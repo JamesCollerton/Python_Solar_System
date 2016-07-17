@@ -8,8 +8,7 @@
 # ------------------------------------------------------------------------------
 # IMPORTS
 
-from Planet import *
-from Window import *
+from SolarSystem import *
 
 # ------------------------------------------------------------------------------
 # MAIN
@@ -18,11 +17,7 @@ from Window import *
 
 def main():
 
-	sun = Planet("Sun", 100, 0, 0, 300)
-	moon = Planet("Moon", 10, 0, 10, 100)
-	window = Window()
-	moon.drawPlanet(window)
-	
+	SolarSystem()
 
 # ------------------------------------------------------------------------------
 # RUNNING MAIN
