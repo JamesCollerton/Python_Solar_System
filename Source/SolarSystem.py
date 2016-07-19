@@ -40,7 +40,7 @@ class SolarSystem:
 
 	""" 
 	Function: 
-		createPlanetList.
+		createPlanetList
 
 	Description:
 		This creates a list of all of the planets and then appends them to

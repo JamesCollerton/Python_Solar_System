@@ -7,11 +7,32 @@
 
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# IMPORTS
+
 from Constants import *
 
+# ------------------------------------------------------------------------------
 
 class Planet:
 
+	""" 
+	Function: 
+		Initialisation
+
+	Description:
+		This initialises the planet with its name, mass, X coordinate, Y 
+		coordinate, size and color.
+
+	Args:
+		self: Self from class.
+		name: The name of the planet.
+		mass: The mass of the planet.
+		xCoord: The xCoordinate of the planet.
+		yCoord: The yCoordinate of the planet.
+		size: The radius of the planet.
+		color: The color to draw the planet to screen.
+	"""	
 	def __init__(self, name, mass, xCoord, yCoord, size, color):
 
 		self.__name = name
@@ -21,14 +42,17 @@ class Planet:
 		self.__size = size
 		self.__color = color
 
-	def printPlanetInfo(self):
+	""" 
+	Function: 
+		drawPlanet
 
-		print self.__name
-		print self.__mass
-		print self.__xCoord
-		print self.__yCoord
-		print self.__size
+	Description:
+		This passes the planet's size and position to a window to be drawn.
 
+	Args:
+		self: Self from class.
+		window: The window to draw to.
+	"""	
 	def drawPlanet(self, window):
 
 		window.drawCircle(self.__size, self.__xCoord, self.__yCoord, self.__color)
