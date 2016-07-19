@@ -1,10 +1,34 @@
+# ------------------------------------------------------------------------------
+
+# SolarSystem Class
+
+# This is the Solar System class which holds all of the planets and controls
+# their interaction.
+
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# IMPORTS
+
 from Planet import *
 from Window import *
 
+# ------------------------------------------------------------------------------
+
 class SolarSystem:
 
-	def __init__(self):
+	""" 
+	Function: 
+		Initialisation.
 
+	Description:
+		This initialises the solar system class by creating all of the arguments
+		and adding them to a list.
+
+	Args:
+		self: Self from class.
+	"""	 
+	def __init__(self):
 		self.__planets = self.createPlanetList()
 
 		window = Window()
@@ -14,6 +38,20 @@ class SolarSystem:
 
 		window.mainLoop()
 
+	""" 
+	Function: 
+		createPlanetList.
+
+	Description:
+		This creates a list of all of the planets and then appends them to
+		an array
+
+	Args:
+		self: Self from class.
+
+	Returns:
+		planets: A list of the planets.
+	"""	
 	def createPlanetList(self):
 
 		sun = Planet("Sun", 330000, 0, 0, 5, "yellow")
@@ -25,7 +63,6 @@ class SolarSystem:
 		saturn = Planet("Saturn", 95.2, 9.582, 0, 5, "khaki2")
 		uranus = Planet("Uranus", 14.6, 19.201, 0, 5, "skyblue")
 		neptune = Planet("Neptune", 17.2, 30.047, 0, 5, "royalblue3")
-		# pluto = Planet("Pluto", 90, 90, 0, 10, "snow 4")
 
 		planets = []
 		planets.append(sun)
@@ -37,6 +74,5 @@ class SolarSystem:
 		planets.append(saturn)
 		planets.append(uranus)
 		planets.append(neptune)
-		# planets.append(pluto)
 
 		return planets
