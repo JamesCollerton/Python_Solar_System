@@ -35,7 +35,7 @@ class Planet:
 		aCoefficient: The a coefficient in the equation for an ellipse.
 		bCoefficient: The b coefficient in the equation for an ellipse.
 	"""	
-	def __init__(self, name, mass, xCoord, yCoord, size, color):
+	def __init__(self, name, mass, xCoord, yCoord, size, color, aCoefficient = 1, bCoefficient = 1):
 
 		self.__name = name
 		self.__mass = mass
@@ -43,6 +43,8 @@ class Planet:
 		self.__yCoord = yCoord
 		self.__size = size
 		self.__color = color
+		self.__aCoefficient = aCoefficient
+		self.__bCoefficient = bCoefficient
 
 	""" 
 	Function: 
