@@ -32,6 +32,8 @@ class Planet:
 		yCoord: The yCoordinate of the planet.
 		size: The radius of the planet.
 		color: The color to draw the planet to screen.
+		aCoefficient: The a coefficient in the equation for an ellipse.
+		bCoefficient: The b coefficient in the equation for an ellipse.
 	"""	
 	def __init__(self, name, mass, xCoord, yCoord, size, color):
 
@@ -57,4 +59,17 @@ class Planet:
 
 		window.drawCircle(self.__size, self.__xCoord, self.__yCoord, self.__color)
 
+	""" 
+	Function: 
+		calculateNextPosition
+
+	Description:
+		This tells the planet where its next x and y positions should be
+
+	Args:
+		self: Self from class.
+	"""	
+	def calculateNextPosition(self):
+
+		a = 1;
 
