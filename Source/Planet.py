@@ -11,6 +11,7 @@
 # IMPORTS
 
 from Constants import *
+import math
 
 # ------------------------------------------------------------------------------
 
@@ -35,7 +36,7 @@ class Planet:
 		aCoefficient: The a coefficient in the equation for an ellipse.
 		bCoefficient: The b coefficient in the equation for an ellipse.
 	"""	
-	def __init__(self, name, mass, xCoord, yCoord, size, color, aCoefficient = 1, bCoefficient = 1):
+	def __init__(self, name, mass, xCoord, yCoord, size, color, aCoefficient = 1, epsilon = 1):
 
 		self.__name = name
 		self.__mass = mass
@@ -44,7 +45,7 @@ class Planet:
 		self.__size = size
 		self.__color = color
 		self.__aCoefficient = aCoefficient
-		self.__bCoefficient = bCoefficient
+		self.__epsilon = epsilon
 
 	""" 
 	Function: 
@@ -71,7 +72,7 @@ class Planet:
 	Args:
 		self: Self from class.
 	"""	
-	def calculateNextPosition(self):
+	def calculateNextPosition(self, phi):
 
-		a = 1;
-
+		x = self.__aCoefficient * (math.cos(phi) - self.__epsilon)
+		y = self.__aCoefficient * math.sqrt(1 - self.__epsilon * self.__epsilon) * math.sin(phi)
