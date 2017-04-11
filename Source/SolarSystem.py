@@ -29,14 +29,14 @@ class SolarSystem:
 		self: Self from class.
 	"""	 
 	def __init__(self):
+
+		self.__window = Window()
 		self.__planets = self.createPlanetList()
 
-		window = Window()
-
 		for planet in self.__planets:
-			planet.drawPlanet(window)
+			planet.animate()
 
-		window.mainLoop()
+		self.__window.mainLoop()
 
 	""" 
 	Function: 
@@ -54,15 +54,15 @@ class SolarSystem:
 	"""	
 	def createPlanetList(self):
 
-		sun = Planet("Sun", 330000, 0, 0, 5, "yellow")
-		mercury = Planet("Mercury", 0.06, 0.387, 0, 5, "grey")
-		venus = Planet("Venus", 0.82, 0.723, 0, 5, "orange")
-		earth = Planet("Earth", 1, 1, 0, 5, "blue")
-		mars = Planet("Mars", 0.11, 1.524, 0, 5, "gold2")
-		jupiter = Planet("Jupiter", 317.8, 5.203, 0, 5, "thistle4")
-		saturn = Planet("Saturn", 95.2, 9.582, 0, 5, "khaki2")
-		uranus = Planet("Uranus", 14.6, 19.201, 0, 5, "skyblue")
-		neptune = Planet("Neptune", 17.2, 30.047, 0, 5, "royalblue3")
+		sun = Planet(self.__window, "Sun", 330000, 0, 0, 5, "yellow")
+		mercury = Planet(self.__window, "Mercury", 0.06, 0.387, 0, 5, "grey")
+		venus = Planet(self.__window, "Venus", 0.82, 0.723, 0, 5, "orange")
+		earth = Planet(self.__window, "Earth", 1, 1, 0, 5, "blue")
+		mars = Planet(self.__window, "Mars", 0.11, 1.524, 0, 5, "gold2")
+		jupiter = Planet(self.__window, "Jupiter", 317.8, 5.203, 0, 5, "thistle4")
+		saturn = Planet(self.__window, "Saturn", 95.2, 9.582, 0, 5, "khaki2")
+		uranus = Planet(self.__window, "Uranus", 14.6, 19.201, 0, 5, "skyblue")
+		neptune = Planet(self.__window, "Neptune", 17.2, 30.047, 0, 5, "royalblue3")
 
 		planets = []
 		planets.append(sun)

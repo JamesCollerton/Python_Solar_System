@@ -75,11 +75,11 @@ class Window:
 		This draws a circle to the window.
 
 	Args:
-		self: From class
-		size: The radius of the circle
+		self: 	From class
+		size: 	The radius of the circle
 		xCoord: The x coordinate to draw the centre
 		yCoord: The y coordinate to draw the centre
-		color: The color of the circle
+		color: 	The color of the circle
 	"""	
 	def drawCircle(self, size, xCoord, yCoord, color):
 		
@@ -106,3 +106,7 @@ class Window:
 	def mainLoop(self):
 
 		mainloop();
+
+	def after(self, delay, function):
+
+		self.__canvas.after(delay, function)
