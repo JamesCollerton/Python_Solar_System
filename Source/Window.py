@@ -110,3 +110,7 @@ class Window:
 	def after(self, delay, function):
 
 		self.__canvas.after(delay, function)
+
+	def clear(self):
+
+		self.__canvas.delete("all")
