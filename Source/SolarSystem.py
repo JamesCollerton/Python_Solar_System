@@ -17,6 +17,11 @@ from Window import *
 
 class SolarSystem:
 
+	"""
+	Defines the speed of the simulation
+	"""
+	SPEED = 1;
+
 	""" 
 	Function: 
 		Initialisation.
@@ -30,14 +35,9 @@ class SolarSystem:
 	"""	 
 	def __init__(self):
 
-		self.SPEED = 1
 		self.__window = Window()
 		self.__planets = self.createPlanetList()
 		self.animate()
-
-		# for planet in self.__planets:
-		# 	planet.animate()
-
 		self.__window.mainLoop()
 
 	""" 
@@ -79,6 +79,18 @@ class SolarSystem:
 
 		return planets
 
+	""" 
+	Function: 
+		animate
+
+	Description:
+		This is used to run the actual animation of the solar system. 
+		Every iteration it clears the screen and then draws each of the 
+		planets.
+
+	Args:
+		self: Self from class.
+	"""	
 	def animate(self):
 
 		self.__window.clear()

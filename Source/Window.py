@@ -107,10 +107,33 @@ class Window:
 
 		mainloop();
 
+	""" 
+	Function: 
+		after
+
+	Description:
+		This is a wrapper for the after function
+		on the canvas.
+
+	Args:
+		self: 		From class.
+		delay: 		How long we want to delay before redrawing
+		function: 	The function we want to call after the delay
+	"""	
 	def after(self, delay, function):
 
 		self.__canvas.after(delay, function)
 
+	""" 
+	Function: 
+		mainLoop
+
+	Description:
+		The main loop that runs to render the window.
+
+	Args:
+		self: From class.
+	"""	
 	def clear(self):
 
 		self.__canvas.delete("all")

@@ -17,6 +17,17 @@ import math
 
 class Planet:
 
+	"""
+	SPEED_MULTIPLIER:
+		This is used to speed up the rotations of the planets so they're 
+		a bit better to watch
+
+	DISTANCE_MULTIPLIER:
+		Same as the above, but is used to alter the x and y positions.
+	"""
+	SPEED_MULTIPLIER = 10;
+	DISTANCE_MULTIPLIER = 9;
+
 	""" 
 	Function: 
 		Initialisation
@@ -35,10 +46,10 @@ class Planet:
 		size: 			The radius of the planet.
 		color: 			The color to draw the planet to screen.
 		aCoefficient: 	The a coefficient in the equation for an ellipse.
-		bCoefficient: 	The b coefficient in the equation for an ellipse.
-		phi: 			The variable that works as time
+		speed: 			The number of days it takes to circle the sun.
+		phi: 			The variable that works as time.
 	"""	
-	def __init__(self, window, name, mass, xCoord, yCoord, size, color, aCoefficient = 200, epsilon = 0.1, speed = 0):
+	def __init__(self, window, name, mass, xCoord, yCoord, size, color, aCoefficient, epsilon, speed):
 
 		self.__window = window
 		self.__name = name
@@ -49,9 +60,18 @@ class Planet:
 		self.__color = color
 		self.__aCoefficient = aCoefficient
 		self.__epsilon = epsilon
-		self.__speed = 0 if speed == 0 else (1 / speed) * 10
+		self.__speed = 0 if speed == 0 else (1 / speed) * self.SPEED_MULTIPLIER
 		self.__phi = 0 
 
+	"""
+	Function: 
+		animate
+
+	Description:
+		This is used to draw the planet and calculate its next
+		position. It is called every step of the animation to
+		draw that step and prepare for the next one.
+	"""
 	def animate(self):
    		self.drawPlanet()
 		self.calculateNextPosition()
@@ -65,7 +85,6 @@ class Planet:
 
 	Args:
 		self: 	Self from class.
-		window: The window to draw to.
 	"""	
 	def drawPlanet(self):
 
@@ -81,9 +100,12 @@ class Planet:
 
 	Args:
 		self: Self from class.
+
+	See:
+		http://www.pa.msu.edu/~stump/champ/mech3f01.pdf
 	"""	
 	def calculateNextPosition(self):
 
-		self.__xCoord = self.__aCoefficient * (math.cos(self.__phi) - self.__epsilon) * 9
-		self.__yCoord = self.__aCoefficient * math.sqrt(1 - self.__epsilon * self.__epsilon) * math.sin(self.__phi) * 9
+		self.__xCoord = self.__aCoefficient * (math.cos(self.__phi) - self.__epsilon) * self.DISTANCE_MULTIPLIER
+		self.__yCoord = self.__aCoefficient * math.sqrt(1 - self.__epsilon * self.__epsilon) * math.sin(self.__phi) * self.DISTANCE_MULTIPLIER
 		self.__phi = 0 if self.__speed == 0 else (self.__phi + self.__speed) % (2 * math.pi)
